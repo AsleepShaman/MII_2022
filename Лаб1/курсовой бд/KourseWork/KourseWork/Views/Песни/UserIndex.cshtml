@@ -1,0 +1,48 @@
+﻿@model IEnumerable<KourseWork.Models.Песни>
+
+@{
+    ViewBag.Title = "Песни";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.TextBox("SongName")
+        <input type="submit" class="button-theme" value="Искать!" />
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Название_песни)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Длина)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Альбомы.Название_альбома)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Название_песни)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Длина)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Альбомы.Название_альбома)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.Номер_песни })
+            </td>
+        </tr>
+    }
+
+</table>

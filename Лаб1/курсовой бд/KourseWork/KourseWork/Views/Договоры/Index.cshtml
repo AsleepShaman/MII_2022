@@ -1,0 +1,71 @@
+﻿@model IEnumerable<KourseWork.Models.Договоры>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (@Html.BeginForm())
+{
+    
+    @Html.TextBox("DogovorNumber")
+    <input type="submit" value="Пересчитать!" />
+}@using (@Html.BeginForm())
+{
+    
+    @Html.TextBox("period_1")
+    @Html.TextBox("period_2")
+    <input type="submit" value="Пересчитать!" />
+}
+@ViewBag.Result
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Номер_договора)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Стоимость)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_заключения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Кол_во_услуг)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Исполнитель.ФИО)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Номер_договора)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Стоимость)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_заключения)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Кол_во_услуг)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Исполнитель.ФИО)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Номер_договора }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Номер_договора }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Номер_договора })
+            </td>
+        </tr>
+    }
+
+</table>

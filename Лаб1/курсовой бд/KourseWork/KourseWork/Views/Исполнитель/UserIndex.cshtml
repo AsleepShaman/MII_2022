@@ -1,0 +1,53 @@
+﻿@model IEnumerable<KourseWork.Models.Исполнитель>
+
+@{
+    ViewBag.Title = "Исполнители";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ФИО)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Кол_во_альбомов)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Карьера)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Кол_во_наград)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Страна)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ФИО)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Кол_во_альбомов)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Карьера)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Кол_во_наград)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Страна)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.Паспорт_Исполнителя }) |
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<KourseWork.Models.Альбомы>
+
+@{
+    ViewBag.Title = "Альбомы";
+}
+
+<h2>Index</h2>
+
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.DropDownList("janr", new SelectList(new string[] { "Рок", "Инди", "Поп", "Бард", null }))
+        <input type="submit" class="button-theme" value="Фильтровать!" />
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Название_альбома)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Жанр)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Общая_длина)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Кол_во_песен)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Язык)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Исполнитель.ФИО)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Название_альбома)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Жанр)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Общая_длина)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Кол_во_песен)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Язык)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Исполнитель.ФИО)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.Номер_альбома }) |
+            </td>
+        </tr>
+    }
+
+</table>

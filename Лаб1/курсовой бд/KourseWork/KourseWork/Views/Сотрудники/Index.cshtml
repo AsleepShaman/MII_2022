@@ -1,0 +1,90 @@
+﻿@model IEnumerable<KourseWork.Models.Сотрудники>
+
+@{
+    ViewBag.Title = "Сотрудники";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.DropDownList("Doljnost", new SelectList(new string[] { null,"Звукорежиссер", "Менеджер", "Инженер" }))
+        <input type="submit" class="button-theme" value="Фильтровать!" />
+    </div>
+}
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.TextBox("percent")
+        <input type="submit" class="button-theme" value="Рассчитать!" />
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Паспорт_сотрудника)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ФИО)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Должность)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_рождения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Телефон)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Пол)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Зарплата)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Номер_труд_книги)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Паспорт_сотрудника)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ФИО)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Должность)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_рождения)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Телефон)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Пол)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Зарплата)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Номер_труд_книги)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Паспорт_сотрудника }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Паспорт_сотрудника }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Паспорт_сотрудника })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,80 @@
+﻿@model KourseWork.Models.Сотрудники
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Сотрудники</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ФИО)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ФИО)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Должность)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Должность)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Дата_рождения)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_рождения)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Телефон)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Телефон)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Пол)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Пол)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Зарплата)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Зарплата)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Номер_труд_книги)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Номер_труд_книги)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

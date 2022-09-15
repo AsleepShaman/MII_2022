@@ -1,0 +1,50 @@
+﻿@model KourseWork.Models.Договоры
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Договоры</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Стоимость)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Стоимость)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Дата_заключения)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_заключения)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Кол_во_услуг)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Кол_во_услуг)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Исполнитель.ФИО)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Исполнитель.ФИО)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Номер_договора }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

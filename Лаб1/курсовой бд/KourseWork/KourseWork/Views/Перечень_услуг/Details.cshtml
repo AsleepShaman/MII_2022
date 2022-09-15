@@ -1,0 +1,66 @@
+﻿@model KourseWork.Models.Перечень_услуг
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Перечень_услуг</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Оборудование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Оборудование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Название)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Название)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Аранжировка.Референс)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Аранжировка.Референс)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Запись.Что_записывается)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Запись.Что_записывается)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Сотрудники.ФИО)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Сотрудники.ФИО)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Сведение.Плагин)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Сведение.Плагин)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Код_услуги }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

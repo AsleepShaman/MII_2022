@@ -1,0 +1,66 @@
+﻿@model KourseWork.Models.Исполнитель
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Исполнитель</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ФИО)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ФИО)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Кол_во_альбомов)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Кол_во_альбомов)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Карьера)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Карьера)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Кол_во_наград)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Кол_во_наград)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Страна)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Страна)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Эл_почта)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Эл_почта)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Паспорт_Исполнителя }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

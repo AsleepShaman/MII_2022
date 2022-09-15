@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8e54748964794ddc93f1cd25bd47d19c" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="AudioStudioDBModel.Альбомы" Width="1.5" PointX="3.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioStudioDBModel.Аранжировка" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioStudioDBModel.Выполнение_услуги" Width="1.5" PointX="8.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioStudioDBModel.Договоры" Width="1.5" PointX="6" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioStudioDBModel.Запись" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioStudioDBModel.Исполнитель" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioStudioDBModel.Перечень_услуг" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioStudioDBModel.Песни" Width="1.5" PointX="6" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioStudioDBModel.Сведение" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioStudioDBModel.Сотрудники" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <AssociationConnector Association="AudioStudioDBModel.FK_Альбомы_Исполнитель" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioStudioDBModel.FK_Песни_Альбомы" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioStudioDBModel.FK_Аранжировка_Перечень_услуг" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioStudioDBModel.FK_Выполнение_услуги_Договоры" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioStudioDBModel.FK_Выполнение_услуги_Перечень_услуг" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioStudioDBModel.FK_Выполнение_услуги_Песни" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioStudioDBModel.FK_Договоры_Исполнитель" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioStudioDBModel.FK_Запись_Перечень_услуг" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioStudioDBModel.FK_Перечень_услуг_Сотрудники" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioStudioDBModel.FK_Сведение_Перечень_услуг" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AudioStudioDBModel.Autentification" Width="1.5" PointX="3" PointY="11.375" />
+        <AssociationConnector Association="AudioStudioDBModel.FK_Autentification_Сотрудники" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

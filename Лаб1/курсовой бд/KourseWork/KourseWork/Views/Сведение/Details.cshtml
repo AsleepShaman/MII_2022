@@ -1,0 +1,50 @@
+﻿@model KourseWork.Models.Сведение
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Сведение</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Кол_во_дорожек)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Кол_во_дорожек)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Работа_в_днях)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Работа_в_днях)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Плагин)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Плагин)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Перечень_услуг.Оборудование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Перечень_услуг.Оборудование)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Код_услуги }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

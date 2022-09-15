@@ -1,0 +1,51 @@
+﻿@model IEnumerable<KourseWork.Models.Сотрудники>
+
+@{
+    ViewBag.Title = "Сотрудники";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.DropDownList("Doljnost", new SelectList(new string[] { null, "Звукорежиссер", "Менеджер", "Инженер" }))
+        <input type="submit" class="button-theme" value="Фильтровать!" />
+    </div>
+}
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.TextBox("percent")
+        <input type="submit" class="button-theme" value="Рассчитать!" />
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ФИО)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Должность)
+        </th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.ФИО)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Должность)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.Паспорт_сотрудника }) 
+            </td>
+        </tr>
+    }
+
+</table>

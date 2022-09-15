@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище AudioStudioDBModelContainer" CdmEntityContainer="AudioStudioDBEntities1">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="AudioStudioDBModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="AudioStudioDBModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Альбомы">
+      <EntityTypeMapping TypeName="AudioStudioDBModel.Альбомы">
+        <MappingFragment StoreEntitySet="Альбомы">
+          <ScalarProperty Name="Номер_альбома" ColumnName="Номер альбома" />
+          <ScalarProperty Name="Название_альбома" ColumnName="Название альбома" />
+          <ScalarProperty Name="Жанр" ColumnName="Жанр" />
+          <ScalarProperty Name="Общая_длина" ColumnName="Общая длина" />
+          <ScalarProperty Name="Кол_во_песен" ColumnName="Кол-во песен" />
+          <ScalarProperty Name="Язык" ColumnName="Язык" />
+          <ScalarProperty Name="EP" ColumnName="EP" />
+          <ScalarProperty Name="Паспортные_данные_исполнителя" ColumnName="Паспортные данные исполнителя" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Аранжировка">
+      <EntityTypeMapping TypeName="AudioStudioDBModel.Аранжировка">
+        <MappingFragment StoreEntitySet="Аранжировка">
+          <ScalarProperty Name="Код_услуги" ColumnName="Код услуги" />
+          <ScalarProperty Name="Референс" ColumnName="Референс" />
+          <ScalarProperty Name="Жанр" ColumnName="Жанр" />
+          <ScalarProperty Name="Кол_во_музыкантов" ColumnName="Кол-во музыкантов" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Выполнение_услуги">
+      <EntityTypeMapping TypeName="AudioStudioDBModel.Выполнение_услуги">
+        <MappingFragment StoreEntitySet="Выполнение услуги">
+          <ScalarProperty Name="Номер_услуги" ColumnName="Номер услуги" />
+          <ScalarProperty Name="Срок_выполнения" ColumnName="Срок выполнения" />
+          <ScalarProperty Name="Номер_песни" ColumnName="Номер песни" />
+          <ScalarProperty Name="Номер_договора" ColumnName="Номер договора" />
+          <ScalarProperty Name="Код_услуги" ColumnName="Код услуги" />
+          <ScalarProperty Name="Стоимость" ColumnName="Стоимость" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Договоры">
+      <EntityTypeMapping TypeName="AudioStudioDBModel.Договоры">
+        <MappingFragment StoreEntitySet="Договоры">
+          <ScalarProperty Name="Номер_договора" ColumnName="Номер договора" />
+          <ScalarProperty Name="Стоимость" ColumnName="Стоимость" />
+          <ScalarProperty Name="Дата_заключения" ColumnName="Дата заключения" />
+          <ScalarProperty Name="Кол_во_услуг" ColumnName="Кол-во услуг" />
+          <ScalarProperty Name="Паспорт_заказчика" ColumnName="Паспорт заказчика" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Запись">
+      <EntityTypeMapping TypeName="AudioStudioDBModel.Запись">
+        <MappingFragment StoreEntitySet="Запись">
+          <ScalarProperty Name="Код_услуги" ColumnName="Код услуги" />
+          <ScalarProperty Name="Перезаписи" ColumnName="Перезаписи" />
+          <ScalarProperty Name="Фрагменты" ColumnName="Фрагменты" />
+          <ScalarProperty Name="Что_записывается" ColumnName="Что записывается" />
+          <ScalarProperty Name="Сопр_инструменты" ColumnName="Сопр инструменты" />
+          <ScalarProperty Name="Битрейт" ColumnName="Битрейт" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Исполнитель">
+      <EntityTypeMapping TypeName="AudioStudioDBModel.Исполнитель">
+        <MappingFragment StoreEntitySet="Исполнитель">
+          <ScalarProperty Name="Паспорт_Исполнителя" ColumnName="Паспорт Исполнителя" />
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="Кол_во_альбомов" ColumnName="Кол-во альбомов" />
+          <ScalarProperty Name="Карьера" ColumnName="Карьера" />
+          <ScalarProperty Name="Кол_во_наград" ColumnName="Кол-во наград" />
+          <ScalarProperty Name="Страна" ColumnName="Страна" />
+          <ScalarProperty Name="Эл_почта" ColumnName="Эл почта" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Перечень_услуг">
+      <EntityTypeMapping TypeName="AudioStudioDBModel.Перечень_услуг">
+        <MappingFragment StoreEntitySet="Перечень услуг">
+          <ScalarProperty Name="Код_услуги" ColumnName="Код услуги" />
+          <ScalarProperty Name="Оборудование" ColumnName="Оборудование" />
+          <ScalarProperty Name="Название" ColumnName="Название" />
+          <ScalarProperty Name="Паспорт_сотрудника" ColumnName="Паспорт сотрудника" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Песни">
+      <EntityTypeMapping TypeName="AudioStudioDBModel.Песни">
+        <MappingFragment StoreEntitySet="Песни">
+          <ScalarProperty Name="Номер_песни" ColumnName="Номер песни" />
+          <ScalarProperty Name="Название_песни" ColumnName="Название песни" />
+          <ScalarProperty Name="Битрейт" ColumnName="Битрейт" />
+          <ScalarProperty Name="Длина" ColumnName="Длина" />
+          <ScalarProperty Name="Номер_альбома" ColumnName="Номер альбома" />
+          <ScalarProperty Name="Сопр_инструменты" ColumnName="Сопр инструменты" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Сведение">
+      <EntityTypeMapping TypeName="AudioStudioDBModel.Сведение">
+        <MappingFragment StoreEntitySet="Сведение">
+          <ScalarProperty Name="Код_услуги" ColumnName="Код услуги" />
+          <ScalarProperty Name="Кол_во_дорожек" ColumnName="Кол-во дорожек" />
+          <ScalarProperty Name="Работа_в_днях" ColumnName="Работа в днях" />
+          <ScalarProperty Name="Плагин" ColumnName="Плагин" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Сотрудники">
+      <EntityTypeMapping TypeName="AudioStudioDBModel.Сотрудники">
+        <MappingFragment StoreEntitySet="Сотрудники">
+          <ScalarProperty Name="Паспорт_сотрудника" ColumnName="Паспорт сотрудника" />
+          <ScalarProperty Name="ФИО" ColumnName="ФИО" />
+          <ScalarProperty Name="Должность" ColumnName="Должность" />
+          <ScalarProperty Name="Дата_рождения" ColumnName="Дата рождения" />
+          <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+          <ScalarProperty Name="Пол" ColumnName="Пол" />
+          <ScalarProperty Name="Зарплата" ColumnName="Зарплата" />
+          <ScalarProperty Name="Номер_труд_книги" ColumnName="Номер труд книги" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="Хранилище AudioStudioDBModel.PeriodSell" FunctionImportName="PeriodSell">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AudioStudioDBModel.PeriodSell_Result">
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Dogovor" FunctionName="Хранилище AudioStudioDBModel.Dogovor" />
+    <FunctionImportMapping FunctionImportName="Nalog" FunctionName="Хранилище AudioStudioDBModel.Nalog" />
+  </EntityContainerMapping>
+</Mapping>

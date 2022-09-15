@@ -1,0 +1,50 @@
+﻿@model KourseWork.Models.Аранжировка
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Аранжировка</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Референс)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Референс)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Жанр)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Жанр)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Кол_во_музыкантов)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Кол_во_музыкантов)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Перечень_услуг.Оборудование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Перечень_услуг.Оборудование)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Код_услуги }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

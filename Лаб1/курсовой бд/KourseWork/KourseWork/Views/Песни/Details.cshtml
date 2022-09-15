@@ -1,0 +1,58 @@
+﻿@model KourseWork.Models.Песни
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Песни</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Название_песни)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Название_песни)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Битрейт)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Битрейт)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Длина)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Длина)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Сопр_инструменты)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Сопр_инструменты)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Альбомы.Название_альбома)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Альбомы.Название_альбома)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Номер_песни }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,64 @@
+﻿@model KourseWork.Models.Выполнение_услуги
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Выполнение_услуги</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Срок_выполнения)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Срок_выполнения)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Стоимость)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Стоимость)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Договоры.Паспорт_заказчика)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Договоры.Паспорт_заказчика)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Перечень_услуг.Оборудование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Перечень_услуг.Оборудование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Песни.Название_песни)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Песни.Название_песни)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

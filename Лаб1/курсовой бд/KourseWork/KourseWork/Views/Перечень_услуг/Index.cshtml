@@ -1,0 +1,52 @@
+﻿@model IEnumerable<KourseWork.Models.Перечень_услуг>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Код_услуги)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Оборудование)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Название)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Сотрудники.ФИО)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.Код_услуги)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Оборудование)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Название)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Сотрудники.ФИО)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Код_услуги }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Код_услуги }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Код_услуги })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<KourseWork.Models.Выполнение_услуги>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Номер_услуги)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Срок_выполнения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Стоимость)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Договоры.Паспорт_заказчика)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Перечень_услуг.Оборудование)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Песни.Название_песни)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Номер_услуги)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Срок_выполнения)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Стоимость)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Договоры.Паспорт_заказчика)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Перечень_услуг.Оборудование)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Песни.Название_песни)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Номер_услуги }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Номер_услуги }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Номер_услуги })
+            </td>
+        </tr>
+    }
+
+</table>

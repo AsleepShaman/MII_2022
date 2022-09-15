@@ -1,0 +1,74 @@
+﻿@model KourseWork.Models.Альбомы
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Альбомы</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Название_альбома)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Название_альбома)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Жанр)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Жанр)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Общая_длина)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Общая_длина)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Кол_во_песен)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Кол_во_песен)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Язык)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Язык)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Исполнитель.ФИО)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Исполнитель.ФИО)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Номер_альбома }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

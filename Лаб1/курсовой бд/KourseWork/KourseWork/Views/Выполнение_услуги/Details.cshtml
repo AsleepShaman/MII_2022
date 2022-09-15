@@ -1,0 +1,58 @@
+﻿@model KourseWork.Models.Выполнение_услуги
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Выполнение_услуги</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Срок_выполнения)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Срок_выполнения)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Стоимость)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Стоимость)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Договоры.Паспорт_заказчика)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Договоры.Паспорт_заказчика)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Перечень_услуг.Оборудование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Перечень_услуг.Оборудование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Песни.Название_песни)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Песни.Название_песни)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Номер_услуги }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

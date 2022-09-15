@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище AudioStudioDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Autentification">
+    <Key>
+      <PropertyRef Name="Логин" />
+    </Key>
+    <Property Name="Логин" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Пароль" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Роль" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Альбомы">
+    <Key>
+      <PropertyRef Name="Номер альбома" />
+    </Key>
+    <Property Name="Номер альбома" Type="int" Nullable="false" />
+    <Property Name="Название альбома" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Жанр" Type="nvarchar" MaxLength="50" />
+    <Property Name="Общая длина" Type="time" Precision="7" />
+    <Property Name="Кол-во песен" Type="int" />
+    <Property Name="Язык" Type="nvarchar" MaxLength="50" />
+    <Property Name="EP" Type="bit" />
+    <Property Name="Паспортные данные исполнителя" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Аранжировка">
+    <Key>
+      <PropertyRef Name="Код услуги" />
+    </Key>
+    <Property Name="Код услуги" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Референс" Type="nvarchar" MaxLength="50" />
+    <Property Name="Жанр" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Кол-во музыкантов" Type="int" />
+  </EntityType>
+  <EntityType Name="Выполнение услуги">
+    <Key>
+      <PropertyRef Name="Номер услуги" />
+    </Key>
+    <Property Name="Номер услуги" Type="int" Nullable="false" />
+    <Property Name="Срок выполнения" Type="int" Nullable="false" />
+    <Property Name="Номер песни" Type="int" Nullable="false" />
+    <Property Name="Номер договора" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Код услуги" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Стоимость" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Договоры">
+    <Key>
+      <PropertyRef Name="Номер договора" />
+    </Key>
+    <Property Name="Номер договора" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Стоимость" Type="money" Nullable="false" />
+    <Property Name="Дата заключения" Type="date" Nullable="false" />
+    <Property Name="Кол-во услуг" Type="int" Nullable="false" />
+    <Property Name="Паспорт заказчика" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Запись">
+    <Key>
+      <PropertyRef Name="Код услуги" />
+    </Key>
+    <Property Name="Код услуги" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Перезаписи" Type="int" />
+    <Property Name="Фрагменты" Type="int" />
+    <Property Name="Что записывается" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Сопр инструменты" Type="int" />
+    <Property Name="Битрейт" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Исполнитель">
+    <Key>
+      <PropertyRef Name="Паспорт Исполнителя" />
+    </Key>
+    <Property Name="Паспорт Исполнителя" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ФИО" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Кол-во альбомов" Type="int" />
+    <Property Name="Карьера" Type="date" />
+    <Property Name="Кол-во наград" Type="int" />
+    <Property Name="Страна" Type="nvarchar" MaxLength="50" />
+    <Property Name="Эл почта" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Перечень услуг">
+    <Key>
+      <PropertyRef Name="Код услуги" />
+    </Key>
+    <Property Name="Код услуги" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Оборудование" Type="nvarchar" MaxLength="50" />
+    <Property Name="Название" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Паспорт сотрудника" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Песни">
+    <Key>
+      <PropertyRef Name="Номер песни" />
+    </Key>
+    <Property Name="Номер песни" Type="int" Nullable="false" />
+    <Property Name="Название песни" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Битрейт" Type="int" Nullable="false" />
+    <Property Name="Длина" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Номер альбома" Type="int" Nullable="false" />
+    <Property Name="Сопр инструменты" Type="int" />
+  </EntityType>
+  <EntityType Name="Сведение">
+    <Key>
+      <PropertyRef Name="Код услуги" />
+    </Key>
+    <Property Name="Код услуги" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Кол-во дорожек" Type="int" />
+    <Property Name="Работа в днях" Type="int" Nullable="false" />
+    <Property Name="Плагин" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Сотрудники">
+    <Key>
+      <PropertyRef Name="Паспорт сотрудника" />
+    </Key>
+    <Property Name="Паспорт сотрудника" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ФИО" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Должность" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Дата рождения" Type="date" Nullable="false" />
+    <Property Name="Телефон" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="Пол" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="Зарплата" Type="money" Nullable="false" />
+    <Property Name="Номер труд книги" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Autentification_Сотрудники">
+    <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="1" />
+    <End Role="Autentification" Type="Self.Autentification" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Сотрудники">
+        <PropertyRef Name="Паспорт сотрудника" />
+      </Principal>
+      <Dependent Role="Autentification">
+        <PropertyRef Name="Логин" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Альбомы_Исполнитель">
+    <End Role="Исполнитель" Type="Self.Исполнитель" Multiplicity="1" />
+    <End Role="Альбомы" Type="Self.Альбомы" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Исполнитель">
+        <PropertyRef Name="Паспорт Исполнителя" />
+      </Principal>
+      <Dependent Role="Альбомы">
+        <PropertyRef Name="Паспортные данные исполнителя" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Аранжировка_Перечень услуг">
+    <End Role="Перечень услуг" Type="Self.Перечень услуг" Multiplicity="1" />
+    <End Role="Аранжировка" Type="Self.Аранжировка" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Перечень услуг">
+        <PropertyRef Name="Код услуги" />
+      </Principal>
+      <Dependent Role="Аранжировка">
+        <PropertyRef Name="Код услуги" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Выполнение услуги_Договоры">
+    <End Role="Договоры" Type="Self.Договоры" Multiplicity="1" />
+    <End Role="Выполнение услуги" Type="Self.Выполнение услуги" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Договоры">
+        <PropertyRef Name="Номер договора" />
+      </Principal>
+      <Dependent Role="Выполнение услуги">
+        <PropertyRef Name="Номер договора" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Выполнение услуги_Перечень услуг">
+    <End Role="Перечень услуг" Type="Self.Перечень услуг" Multiplicity="1" />
+    <End Role="Выполнение услуги" Type="Self.Выполнение услуги" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Перечень услуг">
+        <PropertyRef Name="Код услуги" />
+      </Principal>
+      <Dependent Role="Выполнение услуги">
+        <PropertyRef Name="Код услуги" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Выполнение услуги_Песни">
+    <End Role="Песни" Type="Self.Песни" Multiplicity="1" />
+    <End Role="Выполнение услуги" Type="Self.Выполнение услуги" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Песни">
+        <PropertyRef Name="Номер песни" />
+      </Principal>
+      <Dependent Role="Выполнение услуги">
+        <PropertyRef Name="Номер песни" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Договоры_Исполнитель">
+    <End Role="Исполнитель" Type="Self.Исполнитель" Multiplicity="1" />
+    <End Role="Договоры" Type="Self.Договоры" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Исполнитель">
+        <PropertyRef Name="Паспорт Исполнителя" />
+      </Principal>
+      <Dependent Role="Договоры">
+        <PropertyRef Name="Паспорт заказчика" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Запись_Перечень услуг">
+    <End Role="Перечень услуг" Type="Self.Перечень услуг" Multiplicity="1" />
+    <End Role="Запись" Type="Self.Запись" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Перечень услуг">
+        <PropertyRef Name="Код услуги" />
+      </Principal>
+      <Dependent Role="Запись">
+        <PropertyRef Name="Код услуги" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Перечень услуг_Сотрудники">
+    <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="1" />
+    <End Role="Перечень услуг" Type="Self.Перечень услуг" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Сотрудники">
+        <PropertyRef Name="Паспорт сотрудника" />
+      </Principal>
+      <Dependent Role="Перечень услуг">
+        <PropertyRef Name="Паспорт сотрудника" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Песни_Альбомы">
+    <End Role="Альбомы" Type="Self.Альбомы" Multiplicity="1" />
+    <End Role="Песни" Type="Self.Песни" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Альбомы">
+        <PropertyRef Name="Номер альбома" />
+      </Principal>
+      <Dependent Role="Песни">
+        <PropertyRef Name="Номер альбома" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Сведение_Перечень услуг">
+    <End Role="Перечень услуг" Type="Self.Перечень услуг" Multiplicity="1" />
+    <End Role="Сведение" Type="Self.Сведение" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Перечень услуг">
+        <PropertyRef Name="Код услуги" />
+      </Principal>
+      <Dependent Role="Сведение">
+        <PropertyRef Name="Код услуги" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Dogovor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Dog_count" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Nalog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PerCent" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PeriodSell" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Date1" Type="date" Mode="In" />
+    <Parameter Name="Date2" Type="date" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Salary" Type="money" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <EntityContainer Name="Хранилище AudioStudioDBModelContainer">
+    <EntitySet Name="Autentification" EntityType="Self.Autentification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Альбомы" EntityType="Self.Альбомы" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Аранжировка" EntityType="Self.Аранжировка" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Выполнение услуги" EntityType="Self.Выполнение услуги" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Договоры" EntityType="Self.Договоры" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Запись" EntityType="Self.Запись" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Исполнитель" EntityType="Self.Исполнитель" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Перечень услуг" EntityType="Self.Перечень услуг" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Песни" EntityType="Self.Песни" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Сведение" EntityType="Self.Сведение" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Сотрудники" EntityType="Self.Сотрудники" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Autentification_Сотрудники" Association="Self.FK_Autentification_Сотрудники">
+      <End Role="Сотрудники" EntitySet="Сотрудники" />
+      <End Role="Autentification" EntitySet="Autentification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Альбомы_Исполнитель" Association="Self.FK_Альбомы_Исполнитель">
+      <End Role="Исполнитель" EntitySet="Исполнитель" />
+      <End Role="Альбомы" EntitySet="Альбомы" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Аранжировка_Перечень услуг" Association="Self.FK_Аранжировка_Перечень услуг">
+      <End Role="Перечень услуг" EntitySet="Перечень услуг" />
+      <End Role="Аранжировка" EntitySet="Аранжировка" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Выполнение услуги_Договоры" Association="Self.FK_Выполнение услуги_Договоры">
+      <End Role="Договоры" EntitySet="Договоры" />
+      <End Role="Выполнение услуги" EntitySet="Выполнение услуги" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Выполнение услуги_Перечень услуг" Association="Self.FK_Выполнение услуги_Перечень услуг">
+      <End Role="Перечень услуг" EntitySet="Перечень услуг" />
+      <End Role="Выполнение услуги" EntitySet="Выполнение услуги" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Выполнение услуги_Песни" Association="Self.FK_Выполнение услуги_Песни">
+      <End Role="Песни" EntitySet="Песни" />
+      <End Role="Выполнение услуги" EntitySet="Выполнение услуги" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Договоры_Исполнитель" Association="Self.FK_Договоры_Исполнитель">
+      <End Role="Исполнитель" EntitySet="Исполнитель" />
+      <End Role="Договоры" EntitySet="Договоры" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Запись_Перечень услуг" Association="Self.FK_Запись_Перечень услуг">
+      <End Role="Перечень услуг" EntitySet="Перечень услуг" />
+      <End Role="Запись" EntitySet="Запись" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Перечень услуг_Сотрудники" Association="Self.FK_Перечень услуг_Сотрудники">
+      <End Role="Сотрудники" EntitySet="Сотрудники" />
+      <End Role="Перечень услуг" EntitySet="Перечень услуг" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Песни_Альбомы" Association="Self.FK_Песни_Альбомы">
+      <End Role="Альбомы" EntitySet="Альбомы" />
+      <End Role="Песни" EntitySet="Песни" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Сведение_Перечень услуг" Association="Self.FK_Сведение_Перечень услуг">
+      <End Role="Перечень услуг" EntitySet="Перечень услуг" />
+      <End Role="Сведение" EntitySet="Сведение" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
