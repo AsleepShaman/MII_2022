@@ -1,3 +1,7 @@
+# Лабораторная работа 3
+# Кучина Анна, ИСТбд-42
+# Работа с библиотекой pandas
+
 import csv
 import random
 import string
