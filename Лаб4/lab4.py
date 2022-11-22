@@ -1,3 +1,7 @@
+# Лабораторная работа 4
+# Кучина Анна, ИСТбд-42
+# Метод k-nn, Парзеновское окно, веса классов, библиотека sklearn
+
 import csv
 import pandas as pd
 import numpy as np
